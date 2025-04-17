@@ -1,0 +1,9 @@
+venv
+.env
+yolov8
+datset
+model_v1.h5
+skin_model_final.h5
+skin_model_quantized.tflite
+temp
+temp_uploads
