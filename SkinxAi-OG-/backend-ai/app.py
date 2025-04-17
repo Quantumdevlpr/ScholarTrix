@@ -66,7 +66,7 @@ def preprocess_for_classifier(img_path):
     img_array = np.expand_dims(img_array, axis=0) / 255.0
     return img_array
 
-def classify_image(image_path):
+def classify_image(image_path, threshold=0.5):  # adjust threshold as needed
     img_array = preprocess_for_classifier(image_path)
     predictions = classifier.predict(img_array)
     predicted_index = np.argmax(predictions[0])
@@ -75,7 +75,10 @@ def classify_image(image_path):
 
     logging.info(f"Predictions: {predictions}")
     logging.info(f"Prediction: {predicted_label} (Confidence: {confidence:.2f})")
-    
+
+    if confidence < threshold:
+        return "Unknown", confidence
+
     return predicted_label, round(confidence, 2)
 
 def run_yolo_detection(image_path):
@@ -289,11 +292,18 @@ def predict():
         detections, base64_img = detect_with_yolov8(image_path)
         predicted_label, confidence = classify_image(image_path)
 
-        gemini_raw = get_advice_from_gemini(predicted_label)
-        parsed_gemini_response = parse_gemini_response(gemini_raw)
-
-        # recommendations = get_recommendations_for_condition(predicted_label)
-
+        # === Gemini Response Handling ===
+        if predicted_label == "Unknown":
+            gemini_response = {
+                "sections": [{
+                    "key": "unknown",
+                    "title": "Uncertain Result",
+                    "content": "Sorry, we couldn't confidently identify a skin condition in this image. Please try uploading a clearer image of the affected skin area."
+                }]
+            }
+        else:
+            gemini_raw = get_advice_from_gemini(predicted_label)
+            gemini_response = parse_gemini_response(gemini_raw)
 
         remove_temp_image(image_path)
 
@@ -301,15 +311,14 @@ def predict():
             "yolo_overlay": base64_img,
             "condition": predicted_label,
             "confidence": confidence,
-            "gemini_advice": parsed_gemini_response,
-            # "recommendations": recommendations,
-
+            "gemini_advice": gemini_response,
             "detections": detections
         })
     except Exception as e:
         logging.error(f"Prediction error: {e}")
         return jsonify({"error": str(e)}), 500
     
+        
 @app.route("/chat", methods=["POST"])
 def chat():
     user_message = request.json.get("message")
