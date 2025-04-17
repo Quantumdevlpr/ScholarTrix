@@ -66,7 +66,7 @@ SkinX AI is a smart, user-first platform offering:
 
 ---
 
-## 💰 Business & Monetization Strategy
+## 💰 Future aspects
 
 - ❎ Freemium Model: Core features free, premium for detailed insights  
 - 💳 Subscription Plans: Monthly/yearly with unlimited AI scans  
