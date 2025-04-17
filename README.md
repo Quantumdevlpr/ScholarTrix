@@ -1,7 +1,7 @@
 #  SkinX AI – Intelligent Skin Disease Detection Platform
 
 > Bridging the gap in dermatological care with AI-powered instant diagnosis, personalized insights, and remote consultations.
-
+## to view the output - https://youtu.be/4Bp4M3oxLQ0
 ---
 
 ## 👥 Team: Scholartrix
@@ -100,14 +100,54 @@ SkinX AI is a smart, user-first platform offering:
 - 📚 Maintain medical records for history and improvement tracking
 
 ---
+## 🧰 How to Run the Project
 
+### 📦 Backend Setup
+
+1. **Install dependencies**
+
+   ```bash
+   pip install flask flask-cors ultralytics python-dotenv google-generativeai
+   ```
+
+2. **Run the Flask server**
+
+   ```bash
+   python app.py
+   ```
+
+   This will launch the AI backend on `http://localhost:5000/`.
+
+---
+
+### 💻 Frontend Setup
+
+1. **Navigate to the frontend directory**
+
+   ```bash
+   cd frontend
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+   The frontend will be available at `http://localhost:5173/`.
 ## 📬 Contact
 
 For collaboration or inquiries:
 
 Shivansh Maurya  
-📧 Email: [shivansh.maurya@example.com](mailto:shivansh.maurya@example.com)  
-🔗 LinkedIn: [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
+📧 Email: [shivansh.maurya@example.com](mailto:mshivanshmaurya@gmail.com)  
+
 
 ---
 
