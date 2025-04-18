@@ -34,12 +34,11 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-skinx-teal to-skinx-teal-light flex items-center justify-center">
-            <span className="text-white font-bold text-xl">S</span>
+          <div className="w-20 h-20 rounded-full bg-gradient-to-r from-skinx-teal to-skinx-teal-light flex items-center justify-center">
+          <img src="/logo.png" alt="Skinx" className="w-full h-full object-cover rounded-full" />
+
           </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-skinx-teal to-skinx-purple bg-clip-text text-transparent">
-            SkinX
-          </span>
+          
         </Link>
 
         {/* Desktop nav */}

@@ -73,12 +73,12 @@ const Footer = () => {
               </li>
               <li>
                 <span className="text-gray-600 hover:text-skinx-teal transition-colors cursor-pointer">
-                  Doctor Consultation
+                  Doctor Consultation (coming soon)
                 </span>
               </li>
               <li>
                 <span className="text-gray-600 hover:text-skinx-teal transition-colors cursor-pointer">
-                  Health Reports
+                  Health Reports(coming soon)
                 </span>
               </li>
               <li>
@@ -93,10 +93,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <address className="not-italic text-gray-600 space-y-2">
-              <p>123 Health Street</p>
-              <p>Medical District, MD 12345</p>
-              <p className="mt-2">support@skinx.ai</p>
-              <p>+1 (555) 123-4567</p>
+              <p>Stanza Living </p>
+              <p>Paris house</p>
+              <p className="mt-2">flashdevelopers716@gmail.com</p>
+              <p>+91 9889626691</p>
             </address>
           </div>
         </div>

@@ -21,6 +21,8 @@ const HomePage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Hero Section */}
+      
+    
       <Hero />
 
       <motion.section
@@ -50,7 +52,7 @@ const HomePage = () => {
               className="flex flex-col sm:flex-row justify-center gap-4"
               variants={fadeIn}
             >
-              <Button asChild variant="outline" className="border-skinx-purple text-skinx-purple hover:bg-skinx-purple/10 hover:text-skinx-teal-light  px-6 py-4 h-auto text-base sm:text-lg font-medium">
+            <Button asChild variant="outline" className="border-skinx-purple text-skinx-purple hover:bg-skinx-purple/10 hover:text-skinx-teal-light  px-6 py-4 h-auto text-base sm:text-lg font-medium">
                 <Link to="/scan">
                   <Camera className="mr-2 h-5 w-5" />
                   Analyze My Skin

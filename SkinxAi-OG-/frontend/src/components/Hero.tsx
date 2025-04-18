@@ -77,11 +77,23 @@ const Hero = () => {
               <div className="absolute -z-10 w-full h-full bg-gradient-to-r from-skinx-purple-light/30 to-skinx-teal-light/30 rounded-full blur-3xl" />
               <div className="glass-card rounded-2xl shadow-xl overflow-hidden border border-white/10">
                 <div className="relative">
-                  <img 
-                    src="/placeholder.svg" 
-                    alt="AI Skin Analysis" 
-                    className="w-full h-auto rounded-2xl"
-                  />
+                  <div className="relative container mx-auto px-4 py-8 overflow-hidden">
+                    {/* Background Video */}
+                    <video
+                     autoPlay 
+                     loop
+                     muted
+                     controls={false}
+                     playsInline
+                     className="top-0 right-0 h-full w-full object-cover z-50 shadow-xl rounded-l-2xl">
+ 
+  <source src="/back-vid.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+                  
+                  
+                    </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
                 </div>
               </div>
